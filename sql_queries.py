@@ -1,14 +1,14 @@
 # DROP TABLES
 
-songplay_table_drop = "DROP TABLE IF EXISTS songplay"
+songplay_table_drop = "DROP TABLE IF EXISTS songplays"
 user_table_drop = "DROP TABLE IF EXISTS users"
 song_table_drop = "DROP TABLE IF EXISTS songs"
 artist_table_drop = "DROP TABLE IF EXISTS artists"
-time_table_drop = "DROP TABLE IF EXISTS time_play"
+time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
 #songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
-songplay_table_create = "CREATE TABLE IF NOT EXISTS songplay(user_id INT, song_id INT, artist_id INT, session_id INT\
+songplay_table_create = "CREATE TABLE IF NOT EXISTS songplays(user_id INT, song_id INT, artist_id INT, session_id INT\
 , location VARCHAR(128), item_in_session INT, user_agent VARCHAR(128), PRIMARY KEY(item_in_session, session_id));"        
 #user_id, first_name, last_name, gender, level
 user_table_create = "CREATE TABLE IF NOT EXISTS users(user_id INT, user_last_name VARCHAR(50), user_gender VARCHAR(1), user_first_name VARCHAR(50)\
@@ -19,7 +19,7 @@ song_table_create = "CREATE TABLE IF NOT EXISTS songs(song_id varchar(22), song_
 artist_table_create = "CREATE TABLE IF NOT EXISTS artists(artist_id INT, artist_name VARCHAR(150), artist_latitude DOUBLE PRECISION\
 , artist_longitude DOUBLE PRECISION, PRIMARY KEY(artist_id));"
 #start_time, hour, day, week, month, year, weekday
-time_table_create = "CREATE TABLE IF NOT EXISTS time_play(start_time TIMESTAMP, session_id INT,  item_in_session INT\
+time_table_create = "CREATE TABLE IF NOT EXISTS time(start_time TIMESTAMP, session_id INT,  item_in_session INT\
 , hour INT,  day INT, week INT, month INT, year INT, weekday INT, PRIMARY KEY(item_in_session, session_id));"
 
 # INSERT RECORDS
