@@ -84,7 +84,7 @@ def process_log_file(cur, filepath):
     
     # Fill user table
     user_columns = ['userId', 'lastName', 'gender', 'firstName', 'level']
-    user_df = df[user_columns].drop_duplicates(subset='userId')
+    user_df = df[user_columns]
     max_length = [11, 64, 1,  64, 4]
     fill_table(user_df, cur, user_table_insert, max_length)
     
